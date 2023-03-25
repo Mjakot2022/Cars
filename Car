@@ -1,0 +1,76 @@
+public class Car
+{
+    private String type;
+    private int length;
+    private String color;
+    private static int number_of_cars = 0;
+
+    private static String[] default_type = {"LADA", "MV"};
+    private static String[] default_color = {"MALINOVAJA", "Red"};
+    private static int[] default_length = {400, 500};
+
+    public Car()
+    {
+     number_of_cars = number_of_cars + 1;
+    }
+    public Car(String type1, String color1, int length1)
+    {
+        number_of_cars = number_of_cars + 1;
+        setType(type1);
+        setLength(length1);
+        setColor(color1);
+    }
+    public Car(boolean b)
+    {
+      if(b)
+      {
+
+      }
+      else
+      {
+          setType(default_type[0]);
+          setColor(default_color[1]);
+          setLength(default_length[1]);
+      }
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void print()
+    {
+      String result = "This car has type: "  + getType() + ", get length: " + getLength() + ", color: " + getColor();
+      System.out.println(result);
+    }
+
+    public static void beep()
+    {
+     System.out.println("BEEP!");
+    }
+
+    public static int getNumber_of_cars()
+    {
+        return number_of_cars;
+    }
+}
